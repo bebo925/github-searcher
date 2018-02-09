@@ -1,0 +1,18 @@
+<mat-input-container floatPlaceholder="auto">
+  <mat-icon matPrefix class="mat-18">search</mat-icon>
+  <div matSuffix *ngIf="searching">
+    <mat-progress-spinner [diameter]="20" [strokeWidth]="2" mode="indeterminate">
+    </mat-progress-spinner>
+  </div>
+  <input matInput [formControl]="searchText" type="text" placeholder="Search username">
+</mat-input-container>
+<small *ngIf="users?.length">Showing {{users.length}} of {{total}}</small>
+
+<mat-list>
+  <mat-list-item *ngFor="let user of users">
+    <img matListAvatar [src]="user.avatar_url" alt="pic">
+    <h4 matLine>
+      <a target="_blank" [href]="user.html_url">{{user.login}}</a>
+    </h4>
+  </mat-list-item>
+</mat-list>
