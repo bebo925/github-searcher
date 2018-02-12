@@ -1,18 +1,23 @@
 <mat-input-container floatPlaceholder="auto">
   <mat-icon matPrefix class="mat-18">search</mat-icon>
+
+  <mat-icon (click)="clear()" matSuffix *ngIf="!searching && searchText.value?.length > 0" class="pointer">close</mat-icon>
+
   <div matSuffix *ngIf="searching">
     <mat-progress-spinner [diameter]="20" [strokeWidth]="2" mode="indeterminate">
     </mat-progress-spinner>
   </div>
+
   <input matInput [formControl]="searchText" type="text" placeholder="Search username">
 </mat-input-container>
-<small *ngIf="users?.length">Showing {{users.length}} of {{total}}</small>
+
+<small class="ml-3 text-muted" *ngIf="users?.length">Showing {{users.length}} of {{total}}</small>
 
 <mat-list>
-  <mat-list-item *ngFor="let user of users">
+  <mat-list-item *ngFor="let user of users" (click)="openGithubPage(user)" class="pointer">
     <img matListAvatar [src]="user.avatar_url" alt="pic">
     <h4 matLine>
-      <a target="_blank" [href]="user.html_url">{{user.login}}</a>
+      {{user.login}}
     </h4>
     <mat-divider></mat-divider>
   </mat-list-item>

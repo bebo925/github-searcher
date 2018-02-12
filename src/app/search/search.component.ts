@@ -31,4 +31,13 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  openGithubPage(user) {
+    window.open(user.html_url, '_blank');
+  }
+
+  clear() {
+    this.searchText.reset();
+    this.users = [];
+  }
 }
