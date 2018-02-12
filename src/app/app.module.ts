@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import 'rxjs/add/operator/debounceTime';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, SearchComponent],
