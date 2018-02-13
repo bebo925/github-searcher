@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-@import '~bootstrap/scss/functions',
-  '~bootstrap/scss/variables',
-  '~bootstrap/scss/mixins',
-  '~bootstrap/scss/reboot',
-  '~bootstrap/scss/type',
-  '~bootstrap/scss/utilities',
-  '~bootstrap/scss/grid';
+//Stackblitz can't load scss files, so defaulting to loading entire Bootstrap css library
+// @import '~bootstrap/scss/functions',
+//   '~bootstrap/scss/variables',
+//   '~bootstrap/scss/mixins',
+//   '~bootstrap/scss/reboot',
+//   '~bootstrap/scss/type',
+//   '~bootstrap/scss/utilities',
+//   '~bootstrap/scss/grid';
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 .spacer {
   flex: 1 1 auto;
