@@ -17,8 +17,8 @@ export class SearchComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     this.searchText.valueChanges.debounceTime(500).subscribe(value => {
-      this.users = [];
       if (value) {
+        this.users = [];
         this.searching = true;
         this.http.get(`https://api.github.com/search/users?q=${value}`).subscribe(response => {
           this.users = response['items'];

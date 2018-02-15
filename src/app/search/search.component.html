@@ -13,6 +13,8 @@
 
 <small class="ml-3 text-muted" *ngIf="users?.length">Showing {{users.length}} of {{total}}</small>
 
+<small *ngIf="users.length === 0 && searchText.value?.length>0" class="ml-3 text-muted">No results found.</small>
+
 <mat-list>
   <mat-list-item *ngFor="let user of users" (click)="openGithubPage(user)" class="pointer">
     <img matListAvatar [src]="user.avatar_url" alt="pic">
