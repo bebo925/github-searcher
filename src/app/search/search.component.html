@@ -1,5 +1,5 @@
 <mat-input-container floatPlaceholder="auto">
-  <mat-icon matPrefix class="mat-18">search</mat-icon>
+  <mat-icon matPrefix>search</mat-icon>
 
   <mat-icon (click)="clear()" matSuffix *ngIf="!searching && searchText.value?.length > 0" class="pointer">close</mat-icon>
 
@@ -13,7 +13,7 @@
 
 <small class="ml-3 text-muted" *ngIf="users?.length">Showing {{users.length}} of {{total}}</small>
 
-<small *ngIf="users.length === 0 && searchText.value?.length>0" class="ml-3 text-muted">No results found.</small>
+<small *ngIf="!searching && users?.length === 0 && searchText.value?.length>0" class="ml-3 text-muted">No results found.</small>
 
 <mat-list>
   <mat-list-item *ngFor="let user of users" (click)="openGithubPage(user)" class="pointer">

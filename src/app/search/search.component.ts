@@ -25,6 +25,8 @@ export class SearchComponent implements OnInit {
           this.total = response['total_count'];
           this.searching = false;
         });
+      } else {
+        this.clear();
       }
     });
   }
